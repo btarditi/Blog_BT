@@ -1,12 +1,12 @@
-<?php $titre = "Mon Blog - " . $billet['titre']; ?>
+<?php $this->titre = "BT Blog" . $billet['titre']; ?>
 
 <?php ob_start(); ?>
 <article>
-  <header>
-    <h1 class="titreBillet"><?= $billet['titre'] ?></h1>
-    <time><?= $billet['dateAjout'] ?></time>
-  </header>
-  <p><?= $billet['contenu'] ?></p>
+    <header>
+        <h1 class="titreBillet"><?= $billet['titre'] ?></h1>
+        <time><?= $billet['dateAjout'] ?></time>
+    </header>
+    <p><?= $billet['contenu'] ?></p>
 </article>
 <hr />
 <header>
@@ -16,9 +16,7 @@
   <p><?= $commentaire['auteur'] ?> dit :</p>
   <p><?= $commentaire['contenu'] ?></p>
 <?php endforeach; ?>
-<?php $contenu = ob_get_clean(); ?>
-
-<?php require 'layout.php'; ?>
+<hr/>
 
 <form method="post" action="index.php?action=commenter">
     <input id="auteur" name="auteur" type="text" placeholder="Votre pseudo" 
